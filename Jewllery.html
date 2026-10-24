@@ -1,0 +1,1725 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Maison Lumière | Haute Joaillerie & Diamants — Place Vendôme, Paris</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<!-- Luxury Editorial Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ============================================================
+   HAUTE JOAILLERIE GLOBAL DESIGN TOKENS
+   ============================================================ */
+:root {
+  --noir-abyss: #040302;
+  --noir-card: #0C0A07;
+  --noir-elevated: #14110C;
+  --gold-champagne: #E4C885;
+  --gold-burnished: #C5A059;
+  --gold-deep: #8E6F30;
+  --silk-white: #FAF6EF;
+  --text-muted: #8F8477;
+  --border-gold: rgba(212, 175, 55, 0.16);
+  --border-gold-hover: rgba(228, 200, 133, 0.55);
+  --gold-glow: 0 10px 40px rgba(197, 160, 89, 0.15);
+  --transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none; /* Custom luxury magnetic cursor enabled */
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--noir-abyss);
+}
+
+body {
+  background-color: var(--noir-abyss);
+  color: var(--silk-white);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--noir-abyss); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--gold-champagne), var(--gold-deep)); border-radius: 2px; }
+
+h1, h2, h3, h4, .serif-font {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Container & Sections */
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 35px;
+}
+.section {
+  padding: 130px 0;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-champagne);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.gold-divider {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-champagne), transparent);
+  margin: 22px 0;
+}
+.gold-divider.center {
+  margin: 22px auto;
+  background: linear-gradient(90deg, transparent, var(--gold-champagne), transparent);
+}
+
+/* Luxury Magnetic Cursor */
+.cursor-dot {
+  width: 6px; height: 6px;
+  background-color: var(--gold-champagne);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(228, 200, 133, 0.5);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, transform 0.1s ease-out;
+}
+.cursor-ring.expand {
+  width: 64px; height: 64px;
+  border-color: var(--gold-champagne);
+  background: rgba(228, 200, 133, 0.06);
+}
+
+/* Luxury Buttons */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, var(--gold-champagne), var(--gold-burnished));
+  color: #000;
+  padding: 16px 36px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+  border: none;
+  transition: var(--transition);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.22);
+}
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(212, 175, 55, 0.4);
+}
+.btn-ghost-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  color: var(--gold-champagne);
+  padding: 15px 34px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  border: 1px solid var(--border-gold);
+  transition: var(--transition);
+}
+.btn-ghost-gold:hover {
+  border-color: var(--gold-champagne);
+  background: rgba(228, 200, 133, 0.08);
+}
+
+/* --- 1. Top Atelier Bar --- */
+.atelier-bar {
+  background: #030201;
+  border-bottom: 1px solid var(--border-gold);
+  padding: 10px 0;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.atelier-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.atelier-item span { margin-right: 25px; }
+.atelier-item i { color: var(--gold-champagne); margin-right: 6px; }
+
+/* --- 2. Main High-Jewelry Navigation --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(4, 3, 2, 0.94);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 22px 0;
+  transition: var(--transition);
+}
+.nav-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.nav-menu a {
+  text-decoration: none;
+  color: var(--silk-white);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+.nav-menu a:hover { color: var(--gold-champagne); }
+.brand-name {
+  text-align: center;
+  text-decoration: none;
+}
+.brand-name h2 {
+  font-size: 26px;
+  color: var(--silk-white);
+  letter-spacing: 0.28em;
+}
+.brand-name span {
+  font-size: 8px;
+  color: var(--gold-champagne);
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  display: block;
+}
+.nav-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--silk-white);
+  font-size: 15px;
+  transition: var(--transition);
+  position: relative;
+}
+.icon-btn:hover { color: var(--gold-champagne); }
+.badge-count {
+  position: absolute;
+  top: -8px; right: -8px;
+  background: var(--gold-champagne);
+  color: #000;
+  font-size: 9px;
+  font-weight: 800;
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- 3. Hero Section with Fullscreen Slider --- */
+.hero {
+  position: relative;
+  min-height: 94vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1.2s ease-in-out;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 50%, rgba(4,3,2,0.3) 0%, rgba(4,3,2,0.92) 80%);
+}
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 760px;
+}
+.hero-content h1 {
+  font-size: clamp(3rem, 5.8vw, 5rem);
+  line-height: 1.12;
+  margin-bottom: 24px;
+}
+.hero-content h1 em {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gold-champagne);
+  font-style: italic;
+  font-weight: 300;
+}
+.hero-content p {
+  color: var(--text-muted);
+  font-size: 16.5px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+.hero-slider-indicator {
+  position: absolute;
+  bottom: 40px; right: 40px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.slider-btn {
+  background: rgba(12,10,7,0.85);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-champagne);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.slider-btn:hover {
+  background: var(--gold-champagne);
+  color: #000;
+}
+
+/* --- 4. Press Ticker --- */
+.press-bar {
+  background: var(--noir-card);
+  border-top: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 42px 0;
+}
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+.press-item p {
+  font-family: 'Cinzel', serif;
+  font-size: 14.5px;
+  color: var(--silk-white);
+  font-style: italic;
+  margin-bottom: 6px;
+}
+.press-item span {
+  font-size: 10.5px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-burnished);
+}
+
+/* --- 5. The Maison Heritage Section --- */
+.heritage-section {
+  padding: 130px 0;
+}
+.heritage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.heritage-visual {
+  position: relative;
+}
+.heritage-visual img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  border: 1px solid var(--border-gold);
+  border-radius: 2px;
+}
+.heritage-seal {
+  position: absolute;
+  bottom: -30px; right: -25px;
+  background: linear-gradient(135deg, var(--gold-champagne), var(--gold-deep));
+  color: #000;
+  padding: 26px;
+  border-radius: 50%;
+  width: 120px; height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+.heritage-seal strong { font-size: 24px; font-family: 'Cinzel'; line-height: 1; }
+.heritage-seal span { font-size: 8px; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; margin-top: 4px; }
+.heritage-text h2 {
+  font-size: 42px;
+  margin-bottom: 22px;
+  line-height: 1.2;
+}
+.heritage-text p {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+.heritage-perks {
+  list-style: none;
+  margin: 30px 0 40px;
+}
+.heritage-perks li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+.heritage-perks i {
+  color: var(--gold-champagne);
+  font-size: 16px;
+}
+
+/* --- 6. Live Interactive 4C's Diamond Cut & Carat Calculator (Advanced JS) --- */
+.calc-section {
+  background: var(--noir-card);
+  border-top: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 130px 0;
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 75px;
+  align-items: center;
+}
+.calc-viewer {
+  background: var(--noir-abyss);
+  border: 1px solid var(--border-gold);
+  padding: 50px;
+  text-align: center;
+  position: relative;
+}
+.calc-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+.cut-button-strip {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+.cut-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px;
+  background: var(--noir-card);
+  border: 1px solid var(--border-gold);
+  color: var(--silk-white);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+.cut-btn.active, .cut-btn:hover {
+  background: var(--gold-champagne);
+  color: #000;
+  border-color: var(--gold-champagne);
+  font-weight: 700;
+}
+.slider-control-box {
+  margin: 28px 0;
+}
+.slider-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--gold-champagne);
+}
+.luxury-range {
+  width: 100%;
+  accent-color: var(--gold-champagne);
+}
+.valuation-display-box {
+  background: rgba(228, 200, 133, 0.06);
+  border: 1px dashed var(--gold-burnished);
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.val-number {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  color: var(--gold-champagne);
+  font-weight: 700;
+}
+
+/* --- 7. Curated High-Jewelry Collections --- */
+.collections-section {
+  padding: 130px 0;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 65px;
+}
+.section-header h2 {
+  font-size: 42px;
+  margin-top: 10px;
+}
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.collection-card {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+}
+.collection-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.collection-card:hover img {
+  transform: scale(1.08);
+}
+.collection-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(4,3,2,0.92) 0%, rgba(4,3,2,0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 35px;
+}
+.collection-overlay span {
+  color: var(--gold-champagne);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.collection-overlay h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+/* --- 8. Product Catalog with Dynamic Tabs --- */
+.creations-section {
+  background: var(--noir-card);
+  padding: 130px 0;
+  border-top: 1px solid var(--border-gold);
+}
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  background: transparent;
+  border: 1px solid var(--border-gold);
+  color: var(--text-muted);
+  padding: 12px 28px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+.tab-btn.active, .tab-btn:hover {
+  background: var(--gold-champagne);
+  color: #000;
+  border-color: var(--gold-champagne);
+  font-weight: 700;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 35px;
+}
+.product-card {
+  background: var(--noir-abyss);
+  border: 1px solid var(--border-gold);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.product-card:hover {
+  border-color: var(--border-gold-hover);
+  transform: translateY(-8px);
+  box-shadow: var(--gold-glow);
+}
+.product-img-box {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+.product-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+.product-card:hover .product-img-box img {
+  transform: scale(1.08);
+}
+.product-tag {
+  position: absolute;
+  top: 15px; left: 15px;
+  background: rgba(4,3,2,0.88);
+  border: 1px solid var(--gold-burnished);
+  color: var(--gold-champagne);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+}
+.product-info {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.product-info h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+.product-info p {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+.card-price-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-gold);
+}
+.price-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  color: var(--gold-champagne);
+  font-weight: 700;
+}
+
+/* --- 9. The 5-Stage Haute Lapidary Crafting Process --- */
+.process-section {
+  padding: 130px 0;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+.process-box {
+  background: var(--noir-card);
+  border: 1px solid var(--border-gold);
+  padding: 38px 22px;
+  transition: var(--transition);
+}
+.process-box:hover {
+  border-color: var(--gold-champagne);
+  transform: translateY(-6px);
+}
+.process-number {
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-champagne);
+  color: var(--gold-champagne);
+  font-size: 20px;
+  font-family: 'Cinzel';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+}
+.process-box h4 { font-size: 15px; margin-bottom: 10px; }
+.process-box p { font-size: 12.5px; color: var(--text-muted); }
+
+/* --- 10. Lookbook Editorial Gazette Section --- */
+.lookbook-section {
+  background: var(--noir-card);
+  border-top: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 130px 0;
+}
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.lookbook-img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border: 1px solid var(--border-gold);
+}
+
+/* --- 11. Bespoke Royal Commission Form --- */
+.bespoke-section {
+  padding: 130px 0;
+}
+.bespoke-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+}
+.bespoke-form-card {
+  background: var(--noir-card);
+  border: 1px solid var(--border-gold);
+  padding: 45px;
+}
+.form-group {
+  margin-bottom: 22px;
+}
+.form-group label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-champagne);
+  margin-bottom: 8px;
+}
+.luxury-input {
+  width: 100%;
+  background: var(--noir-abyss);
+  border: 1px solid var(--border-gold);
+  padding: 14px 18px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+.luxury-input:focus { border-color: var(--gold-champagne); }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* --- 12. Maison Sovereign Privileges (4 Pillars) --- */
+.privileges-section {
+  background: var(--noir-card);
+  border-top: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 90px 0;
+}
+.privileges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+.privilege-card i {
+  font-size: 32px;
+  color: var(--gold-champagne);
+  margin-bottom: 18px;
+}
+.privilege-card h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.privilege-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* --- 13. Global Flagship Salons Showcase --- */
+.salons-section {
+  padding: 130px 0;
+}
+.salons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.salon-card {
+  background: var(--noir-card);
+  border: 1px solid var(--border-gold);
+  padding: 30px 22px;
+  text-align: center;
+  transition: var(--transition);
+}
+.salon-card:hover {
+  border-color: var(--gold-champagne);
+  transform: translateY(-5px);
+}
+.salon-card h4 {
+  font-size: 18px;
+  color: var(--gold-champagne);
+  margin-bottom: 6px;
+}
+.salon-card p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+/* --- 14. Imperial Client Endorsements Carousel --- */
+.testimonials-section {
+  background: var(--noir-card);
+  border-top: 1px solid var(--border-gold);
+  padding: 130px 0;
+  text-align: center;
+}
+.testimonial-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+.testimonial-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  min-height: 120px;
+}
+.client-name {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-champagne);
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.client-title {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* --- 15. Slide-Over Bag Drawer & Modal --- */
+.bag-drawer {
+  position: fixed;
+  top: 0; right: -480px;
+  width: 440px; max-width: 95%; height: 100%;
+  background: var(--noir-card);
+  border-left: 1px solid var(--border-gold);
+  z-index: 10001;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.bag-drawer.active { right: 0; }
+.bag-list { flex-grow: 1; overflow-y: auto; margin: 25px 0; }
+.bag-row {
+  display: flex; gap: 15px; padding: 14px 0;
+  border-bottom: 1px solid var(--border-gold);
+}
+.bag-row img { width: 60px; height: 60px; object-fit: cover; }
+
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(4,3,2,0.94);
+  backdrop-filter: blur(12px);
+  z-index: 10000;
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+  background: var(--noir-card);
+  border: 1px solid var(--gold-burnished);
+  max-width: 650px; width: 100%;
+  padding: 50px 45px;
+  position: relative;
+}
+
+/* --- 16. Imperial Footer --- */
+.footer {
+  background: #020201;
+  border-top: 1px solid var(--border-gold);
+  padding: 100px 0 35px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+  gap: 60px;
+  margin-bottom: 70px;
+}
+.footer-col h4 {
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-champagne);
+  margin-bottom: 25px;
+}
+.footer-col p { color: var(--text-muted); font-size: 13.5px; line-height: 1.8; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul a { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: var(--transition); }
+.footer-col ul a:hover { color: var(--gold-champagne); padding-left: 5px; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .heritage-grid, .calc-grid, .lookbook-grid, .bespoke-grid, .footer-grid { grid-template-columns: 1fr; }
+  .collections-grid { grid-template-columns: 1fr 1fr; }
+  .process-grid, .salons-grid, .privileges-grid { grid-template-columns: repeat(2, 1fr); }
+  .press-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-menu { display: none; }
+  * { cursor: auto !important; }
+  .cursor-dot, .cursor-ring { display: none; }
+}
+@media (max-width: 600px) {
+  .collections-grid, .process-grid, .salons-grid, .privileges-grid, .press-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+  <!-- Custom Magnetic Luxury Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- 1. Top Concierge Bar -->
+  <div class="atelier-bar">
+    <div class="container atelier-bar-inner">
+      <div class="atelier-item">
+        <span><i class="fa-solid fa-gem"></i> 14 Place Vendôme, Paris</span>
+        <span><i class="fa-solid fa-phone"></i> VIP Concierge: +33 1 42 68 00 88</span>
+      </div>
+      <div class="atelier-item">
+        <span>White-Glove Delivery to Geneva, London, Dubai &amp; New York</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Sticky Glassmorphic Navbar -->
+  <nav class="navbar">
+    <div class="container nav-grid">
+      <ul class="nav-menu">
+        <li><a href="#hero">High Jewelry</a></li>
+        <li><a href="#heritage">Heritage</a></li>
+        <li><a href="#calculator">4C's Explorer</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#creations">Creations</a></li>
+        <li><a href="#bespoke">Bespoke</a></li>
+      </ul>
+
+      <a href="#" class="brand-name">
+        <h2>LUMIÈRE</h2>
+        <span>Haute Joaillerie Paris</span>
+      </a>
+
+      <div class="nav-controls">
+        <button class="btn-ghost-gold" onclick="toggleModal(true)" style="padding: 10px 20px; font-size: 10px;">
+          Private Salon Viewing
+        </button>
+        <button class="icon-btn" id="openBagBtn" title="Shopping Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count" id="bagBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 3. Fullscreen Dramatic Hero Slider -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow"><i class="fa-solid fa-crown"></i> High Jewelry Gazette 2026</span>
+        <h1>Rare Diamonds Born To Defy <em>Eternity</em>.</h1>
+        <div class="gold-divider"></div>
+        <p>Each sovereign creation is sculpted within our historic Parisian atelier on Place Vendôme. Certified GIA Type IIa conflict-free diamonds set in hand-poured 950 platinum and 18K gilded honey gold.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="#creations" class="btn-gold"><i class="fa-solid fa-sparkles"></i> Explore Creations</a>
+          <button onclick="toggleModal(true)" class="btn-ghost-gold">Private Appointment</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slider-indicator">
+      <button class="slider-btn" onclick="moveSlide(-1)"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="slider-btn" onclick="moveSlide(1)"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!-- 4. Press Ticker -->
+  <div class="press-bar">
+    <div class="container press-grid">
+      <div class="press-item">
+        <p>"The sovereign pinnacle of modern French diamond craftsmanship."</p>
+        <span>Vogue Haute Couture</span>
+      </div>
+      <div class="press-item">
+        <p>"Place Vendôme's most guarded secret for heirloom engagement rings."</p>
+        <span>Harper's Bazaar Luxury</span>
+      </div>
+      <div class="press-item">
+        <p>"Unparalleled optical purity and museum-grade sapphire cuts."</p>
+        <span>Forbes International</span>
+      </div>
+      <div class="press-item">
+        <p>"A benchmark in ethical gold provenance and antique restorations."</p>
+        <span>Robb Report Luxe</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. The Maison Heritage Section -->
+  <section class="heritage-section" id="heritage">
+    <div class="container heritage-grid">
+      <div class="heritage-visual">
+        <img src="https://images.unsplash.com/photo-1531995811006-35cb42e1a022?q=80&w=1200" alt="Master Jeweler at Work">
+        <div class="heritage-seal">
+          <strong>1996</strong>
+          <span>Place Vendôme Paris</span>
+        </div>
+      </div>
+      <div class="heritage-text">
+        <span class="eyebrow">The Maison Story</span>
+        <h2>Three Decades of Uncompromising Sovereign Artistry.</h2>
+        <div class="gold-divider"></div>
+        <p>Founded on the prestigious Place Vendôme, Maison Lumière is governed by one absolute decree: only the top 1% of the world's diamonds are permitted into our private vaults. Every piece begins with a gouache watercolor rendering before being shaped in wax and hand-set by our master lapidaries.</p>
+        <ul class="heritage-perks">
+          <li><i class="fa-solid fa-circle-check"></i> Certified GIA &amp; Gübelin Provenance Documentation</li>
+          <li><i class="fa-solid fa-circle-check"></i> 100% Fairtrade Certified Recycled Gold &amp; 950 Platinum</li>
+          <li><i class="fa-solid fa-circle-check"></i> Up to 60 Hours of Microscopic Hand-Prong Setting Per Ring</li>
+          <li><i class="fa-solid fa-circle-check"></i> Lifetime Sovereign Warranty &amp; Annual Ultrasonic Polishing</li>
+        </ul>
+        <button onclick="toggleModal(true)" class="btn-gold">Commission Your Heirloom</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Live Interactive 4C's Diamond Cut & Carat Calculator -->
+  <section class="calc-section" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Lapidary Atelier</span>
+        <h2>Interactive Diamond 4C's &amp; Carat Valuation</h2>
+        <div class="gold-divider center"></div>
+        <p style="color:var(--text-muted); max-width:620px; margin:auto;">Select your diamond geometry and slide the carat weight to calculate real-time atelier investment estimates.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-viewer">
+          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000" id="calcImg" class="calc-img" alt="Diamond View">
+          <div class="cut-button-strip">
+            <button class="cut-btn active" onclick="chooseCut('brilliant', 12500, 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000')">Round Brilliant</button>
+            <button class="cut-btn" onclick="chooseCut('emerald', 14500, 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=1000')">Emerald Cut</button>
+            <button class="cut-btn" onclick="chooseCut('cushion', 13200, 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1000')">Cushion Cut</button>
+            <button class="cut-btn" onclick="chooseCut('pear', 13800, 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1000')">Pear Cut</button>
+          </div>
+        </div>
+
+        <div>
+          <span class="eyebrow" id="cutSubhead">Mathematical Maximum Fire</span>
+          <h2 id="cutTitle" style="font-size:32px; margin-bottom:15px;">Round Brilliant Cut</h2>
+          <p id="cutDesc" style="color:var(--text-muted); font-size:14px; margin-bottom:20px;">58 facets calculated with extreme precision to reflect 99.8% of light directly back through the table.</p>
+
+          <div class="slider-control-box">
+            <div class="slider-label">
+              <span>Select Diamond Carat:</span>
+              <strong style="color:#fff;" id="caratValDisplay">2.50 Carats</strong>
+            </div>
+            <input type="range" min="10" max="80" value="25" class="luxury-range" id="caratSlider" oninput="updateDiamondPrice()">
+          </div>
+
+          <div class="valuation-display-box">
+            <div>
+              <span style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted);">Estimated Atelier Value</span>
+              <div class="val-number" id="finalPriceDisplay">$31,250 USD</div>
+            </div>
+            <button onclick="toggleModal(true)" class="btn-gold" style="padding:12px 24px; font-size:10px;">Reserve Stone</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Curated High-Jewelry Collections -->
+  <section class="collections-section" id="collections">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Haute Joaillerie Portfolios</span>
+        <h2>The Sovereign Collections</h2>
+        <div class="gold-divider center"></div>
+      </div>
+
+      <div class="collections-grid">
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000" alt="Solitaires">
+          <div class="collection-overlay">
+            <span>Collection I</span>
+            <h3>Place Vendôme Solitaires</h3>
+            <a href="#creations" style="color:#fff; font-size:11px; text-transform:uppercase; letter-spacing:0.15em;">Explore Series &rarr;</a>
+          </div>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1000" alt="High Necklaces">
+          <div class="collection-overlay">
+            <span>Collection II</span>
+            <h3>Royal Diamond Cascades</h3>
+            <a href="#creations" style="color:#fff; font-size:11px; text-transform:uppercase; letter-spacing:0.15em;">Explore Series &rarr;</a>
+          </div>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=1000" alt="Flora High Jewelry">
+          <div class="collection-overlay">
+            <span>Collection III</span>
+            <h3>Emerald &amp; Sapphire Flora</h3>
+            <a href="#creations" style="color:#fff; font-size:11px; text-transform:uppercase; letter-spacing:0.15em;">Explore Series &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Product Catalog with Dynamic Tabs -->
+  <section class="creations-section" id="creations">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Exquisite Masterpieces</span>
+        <h2>Curated Maison Creations</h2>
+        <div class="gold-divider center"></div>
+      </div>
+
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filterCatalog('all')">Complete Vault</button>
+        <button class="tab-btn" onclick="filterCatalog('ring')">Solitaires &amp; Bands</button>
+        <button class="tab-btn" onclick="filterCatalog('necklace')">High Necklaces</button>
+        <button class="tab-btn" onclick="filterCatalog('earring')">High Earrings</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- 9. The 5-Stage Haute Lapidary Crafting Process -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Atelier Standard</span>
+        <h2>The 5 Pillars of Creation</h2>
+        <div class="gold-divider center"></div>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-box">
+          <div class="process-number">01</div>
+          <h4>Geological Selection</h4>
+          <p>Sourcing solely Type IIa diamonds with zero nitrogen defects.</p>
+        </div>
+        <div class="process-box">
+          <div class="process-number">02</div>
+          <h4>Gouache Sketch</h4>
+          <p>Hand-painted watercolor renderings capturing every optical angle.</p>
+        </div>
+        <div class="process-box">
+          <div class="process-number">03</div>
+          <h4>Wax Sculpture</h4>
+          <p>Hand-carved miniature green wax casts ensuring anatomical perfection.</p>
+        </div>
+        <div class="process-box">
+          <div class="process-number">04</div>
+          <h4>Platinum Setting</h4>
+          <p>Micro-pave claw setting performed under 40x optical microscopes.</p>
+        </div>
+        <div class="process-box">
+          <div class="process-number">05</div>
+          <h4>Mirror Luster</h4>
+          <p>Tri-stage polishing using walnut shell powder for museum-grade luster.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Lookbook Editorial Gazette Section -->
+  <section class="lookbook-section">
+    <div class="container lookbook-grid">
+      <div>
+        <span class="eyebrow">Gazette Volume IV</span>
+        <h2 style="font-size: 42px; margin-bottom: 25px; line-height: 1.2;">"True Luxury Is That Which Can Be Passed Across Generations."</h2>
+        <div class="gold-divider"></div>
+        <p style="color:var(--text-muted); line-height: 1.9; margin-bottom: 30px;">Every ring crafted at 14 Place Vendôme is cataloged in the Maison private archival ledger. Should your heirs ever request maintenance in fifty or a hundred years, our master craftsmen will restore it according to the original blueprint.</p>
+        <button onclick="toggleModal(true)" class="btn-ghost-gold">Request High Jewelry Book</button>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200" class="lookbook-img" alt="High Jewelry Model">
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Bespoke Royal Commission Form -->
+  <section class="bespoke-section" id="bespoke">
+    <div class="container bespoke-grid">
+      <div>
+        <span class="eyebrow">Bespoke Atelier Commission</span>
+        <h2 style="font-size: 38px; margin-bottom: 20px;">Commission a One-of-a-Kind Imperial Piece.</h2>
+        <p style="color:var(--text-muted); line-height: 1.8; margin-bottom: 30px;">Collaborate directly with our Creative Director to design an engagement ring, tiara, or high necklace. We acquire rare unheated gemstones specifically for your commission.</p>
+
+        <div style="margin-bottom: 25px;">
+          <h4 style="color:var(--gold-champagne); margin-bottom: 5px;">Place Vendôme Atelier</h4>
+          <p style="color:var(--text-muted); font-size: 13.5px;">14 Place Vendôme, 75001 Paris, France</p>
+        </div>
+        <div style="margin-bottom: 25px;">
+          <h4 style="color:var(--gold-champagne); margin-bottom: 5px;">Private Concierge Line</h4>
+          <p style="color:var(--text-muted); font-size: 13.5px;">+33 1 42 68 00 88 (Direct WhatsApp Available)</p>
+        </div>
+      </div>
+
+      <div class="bespoke-form-card">
+        <form onsubmit="event.preventDefault(); submitBespokeToWhatsApp();">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Dignitary Name</label>
+              <input type="text" id="bName" class="luxury-input" placeholder="e.g. Baroness Sophia" required>
+            </div>
+            <div class="form-group">
+              <label>Phone / WhatsApp</label>
+              <input type="tel" id="bPhone" class="luxury-input" placeholder="+33..." required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Desired Piece Type</label>
+              <select id="bType" class="luxury-input">
+                <option>Bridal Solitaire Ring</option>
+                <option>High Diamond Necklace</option>
+                <option>Royal Tiara Commission</option>
+                <option>Unheated Sapphire Creation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Target Investment Range</label>
+              <select id="bBudget" class="luxury-input">
+                <option>$20,000 — $50,000 USD</option>
+                <option>$50,000 — $100,000 USD</option>
+                <option>$100,000+ USD Sovereign</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Specific Gemstone or Aesthetic Notes</label>
+            <textarea id="bNotes" class="luxury-input" style="height: 110px; resize: none;" placeholder="Preferred cut, platinum or gold, carat weight..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-gold" style="width: 100%; justify-content: center;">
+            <i class="fa-brands fa-whatsapp fa-lg"></i> Send Commission Brief To Atelier
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Maison Sovereign Privileges (4 Pillars) -->
+  <section class="privileges-section">
+    <div class="container privileges-grid">
+      <div class="privilege-card">
+        <i class="fa-solid fa-certificate"></i>
+        <h4>GIA &amp; Gübelin Provenance</h4>
+        <p>Double laboratory certification with laser inscribed serials.</p>
+      </div>
+      <div class="privilege-card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h4>Armored White-Glove</h4>
+        <p>Private courier delivery insured up to $1,000,000 globally.</p>
+      </div>
+      <div class="privilege-card">
+        <i class="fa-solid fa-award"></i>
+        <h4>Lifetime Sovereign Guarantee</h4>
+        <p>Annual inspection, prong tightening, and archival restoration.</p>
+      </div>
+      <div class="privilege-card">
+        <i class="fa-solid fa-champagne-glasses"></i>
+        <h4>Private Salon Privilege</h4>
+        <p>VIP champagne access across all four worldwide flagship boutiques.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Global Flagship Salons Showcase -->
+  <section class="salons-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Worldwide Footprint</span>
+        <h2>Visit Our Private Salons</h2>
+        <div class="gold-divider center"></div>
+      </div>
+
+      <div class="salons-grid">
+        <div class="salon-card">
+          <h4>Paris — Place Vendôme</h4>
+          <p>14 Place Vendôme, 75001 Paris<br>Private Viewing By Appointment<br>Mon — Sat: 10:00 — 19:00</p>
+          <button onclick="toggleModal(true)" class="btn-ghost-gold" style="padding: 8px 16px; font-size: 10px;">Reserve Salon</button>
+        </div>
+
+        <div class="salon-card">
+          <h4>London — Mayfair</h4>
+          <p>12 New Bond Street, London W1S<br>Private Viewing By Appointment<br>Mon — Sat: 10:00 — 18:30</p>
+          <button onclick="toggleModal(true)" class="btn-ghost-gold" style="padding: 8px 16px; font-size: 10px;">Reserve Salon</button>
+        </div>
+
+        <div class="salon-card">
+          <h4>Geneva — Rue du Rhône</h4>
+          <p>42 Rue du Rhône, 1204 Genève<br>Private Viewing By Appointment<br>Mon — Fri: 09:30 — 18:30</p>
+          <button onclick="toggleModal(true)" class="btn-ghost-gold" style="padding: 8px 16px; font-size: 10px;">Reserve Salon</button>
+        </div>
+
+        <div class="salon-card">
+          <h4>Dubai — The Palm</h4>
+          <p>The Royal Atlantis VIP Suite<br>Private Viewing By Appointment<br>Daily: 11:00 — 21:00</p>
+          <button onclick="toggleModal(true)" class="btn-ghost-gold" style="padding: 8px 16px; font-size: 10px;">Reserve Salon</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Imperial Client Endorsements Carousel -->
+  <section class="testimonials-section">
+    <div class="container testimonial-container">
+      <i class="fa-solid fa-quote-left" style="font-size: 34px; color: var(--gold-champagne); margin-bottom: 25px;"></i>
+      <p class="testimonial-quote" id="testiQuote">
+        "The bespoke solitaire ring created by Maison Lumière is a masterwork of mathematical optical perfection. Walking into the Place Vendôme salon was an unforgettable experience."
+      </p>
+      <h4 class="client-name" id="testiName">Duchess Elena of Saxe-Coburg</h4>
+      <p class="client-title" id="testiTitle">Private Client • Geneva Salon</p>
+
+      <div style="display: flex; justify-content: center; gap: 15px; margin-top: 35px;">
+        <button class="slider-btn" onclick="prevTesti()"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="slider-btn" onclick="nextTesti()"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. Slide-Over Shopping Bag Drawer -->
+  <div class="bag-drawer" id="bagDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-gold); padding-bottom:18px;">
+      <h3 style="font-size: 18px;">Your Selection Bag</h3>
+      <button onclick="toggleBag(false)" style="background:none; border:none; color:#fff; font-size:24px;">&times;</button>
+    </div>
+
+    <div class="bag-list" id="bagList"></div>
+
+    <div style="border-top:1px solid var(--border-gold); padding-top:18px;">
+      <div style="display:flex; justify-content:space-between; font-size:18px; margin-bottom:20px;">
+        <span>Total Investment:</span>
+        <strong style="color:var(--gold-champagne); font-family:'Cinzel';" id="bagTotal">$0.00</strong>
+      </div>
+      <a href="#" id="waCheckoutBtn" target="_blank" class="btn-gold" style="width:100%; justify-content:center;">
+        <i class="fa-brands fa-whatsapp fa-lg"></i> Concierge Checkout
+      </a>
+    </div>
+  </div>
+
+  <!-- Private Salon Modal -->
+  <div class="modal-overlay" id="salonModal">
+    <div class="modal-box">
+      <button onclick="toggleModal(false)" style="position:absolute; top:20px; right:20px; background:none; border:none; color:#fff; font-size:24px;">&times;</button>
+      <span class="eyebrow">Exclusive Place Vendôme Service</span>
+      <h2 style="font-size: 26px; margin-bottom: 8px;">Private Salon Consultation</h2>
+      <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 25px;">Private champagne viewing accompanied by our Chief Gemologist.</p>
+      
+      <form onsubmit="event.preventDefault(); submitSalon();">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="sName" class="luxury-input" placeholder="e.g. Lady Vivienne" required>
+        </div>
+        <div class="form-group">
+          <label>Telephone / WhatsApp</label>
+          <input type="tel" id="sPhone" class="luxury-input" placeholder="+33..." required>
+        </div>
+        <div class="form-group">
+          <label>Desired Salon</label>
+          <select id="sCity" class="luxury-input">
+            <option>Paris — 14 Place Vendôme (Atelier Principal)</option>
+            <option>Geneva — Rue du Rhône</option>
+            <option>London — New Bond Street</option>
+            <option>Dubai — The Royal Atlantis Suite</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-gold" style="width:100%; justify-content:center; margin-top:10px;">
+          Confirm Private Invitation
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 16. Imperial Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#" class="brand-name" style="text-align:left; display:block; margin-bottom:20px;">
+          <h2>LUMIÈRE</h2>
+          <span>Haute Joaillerie Paris</span>
+        </a>
+        <p>Purveyors of museum-grade diamonds, unheated Burmese rubies, and royal engagement rings since 1996. Registered on the Place Vendôme, Paris.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Salons Principal</h4>
+        <p>Paris: 14 Place Vendôme<br>London: 12 New Bond St<br>Geneva: 42 Rue du Rhône<br>Dubai: The Royal Atlantis</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>High Jewelry</h4>
+        <ul>
+          <li><a href="#calculator">Type IIa Diamonds</a></li>
+          <li><a href="#creations">Bridal Solitaires</a></li>
+          <li><a href="#bespoke">Bespoke Commissions</a></li>
+          <li><a href="#collections">Archival Gazette</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Client Concierge</h4>
+        <p>Available 24/7 for bespoke commissions and white-glove courier inquiries.</p>
+        <p style="color:var(--gold-champagne); margin-top:12px;"><i class="fa-solid fa-envelope"></i> concierge@lumiere-paris.fr</p>
+      </div>
+    </div>
+
+    <div class="container" style="border-top:1px solid rgba(255,255,255,0.05); padding-top:25px; display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted);">
+      <p>&copy; 2026 Maison Lumière Haute Joaillerie. Registered 14 Place Vendôme, Paris.</p>
+      <p style="color:var(--gold-champagne);">Sovereign French Heritage</p>
+    </div>
+  </footer>
+
+  <!-- ======================== ADVANCED JAVASCRIPT ======================== -->
+  <script>
+    // --- 1. Custom Magnetic Cursor ---
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    window.addEventListener('mousemove', (e) => {
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      ring.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    document.querySelectorAll('a, button, input, select, textarea, .collection-card, .product-card').forEach(elem => {
+      elem.addEventListener('mouseenter', () => ring.classList.add('expand'));
+      elem.addEventListener('mouseleave', () => ring.classList.remove('expand'));
+    });
+
+    // --- 2. Hero Background Slider ---
+    const heroWallpapers = [
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1600",
+      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1600",
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1600"
+    ];
+    let currentHeroIndex = 0;
+    const heroEl = document.getElementById('hero');
+
+    function applyHeroWallpaper() {
+      heroEl.style.backgroundImage = `url('${heroWallpapers[currentHeroIndex]}')`;
+    }
+    function moveSlide(dir) {
+      currentHeroIndex = (currentHeroIndex + dir + heroWallpapers.length) % heroWallpapers.length;
+      applyHeroWallpaper();
+    }
+    applyHeroWallpaper();
+    setInterval(() => moveSlide(1), 7000);
+
+    // --- 3. Live 4C's Diamond Cut & Carat Calculator ---
+    let baseCutRate = 12500;
+
+    function chooseCut(cut, rate, imgSrc) {
+      baseCutRate = rate;
+      document.querySelectorAll('.cut-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const img = document.getElementById('calcImg');
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.src = imgSrc;
+        img.style.opacity = '1';
+      }, 200);
+
+      const titles = {
+        brilliant: ["Round Brilliant Cut", "58 facets calculated with extreme precision for 99.8% light reflection."],
+        emerald: ["Royal Emerald Cut", "Concentric step-cut facets forming a crystalline hall of mirrors."],
+        cushion: ["Heritage Cushion Cut", "Antique 19th century romantic pillow silhouette with intense candlelight glow."],
+        pear: ["Sovereign Pear Cut", "Tear-of-Aphrodite geometry combining brilliant optics with tapering elegance."]
+      };
+      document.getElementById('cutTitle').textContent = titles[cut][0];
+      document.getElementById('cutDesc').textContent = titles[cut][1];
+      updateDiamondPrice();
+    }
+
+    function updateDiamondPrice() {
+      const sliderVal = document.getElementById('caratSlider').value;
+      const carats = (sliderVal / 10).toFixed(2);
+      document.getElementById('caratValDisplay').textContent = `${carats} Carats`;
+      const totalPrice = Math.round(baseCutRate * carats);
+      document.getElementById('finalPriceDisplay').textContent = `$${totalPrice.toLocaleString()} USD`;
+    }
+
+    // --- 4. Catalog Database & Filtering ---
+    const catalog = [
+      {
+        id: 1,
+        title: "Place Vendôme Solitaire Ring",
+        category: "ring",
+        tag: "Masterpiece",
+        price: 18500,
+        desc: "3.20 ct Type IIa D-Flawless diamond set in four claw prongs on mirror-polished 950 platinum.",
+        image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800"
+      },
+      {
+        id: 2,
+        title: "Eternity Pavé Diamond Band",
+        category: "ring",
+        tag: "Bridal",
+        price: 6800,
+        desc: "Full eternity band featuring 22 hand-matched brilliant cut diamonds set in 18K rose gold.",
+        image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=800"
+      },
+      {
+        id: 3,
+        title: "The Grand Cascade Diamond Necklace",
+        category: "necklace",
+        tag: "Museum Piece",
+        price: 45000,
+        desc: "Graduated stream of pear and marquise cut diamonds totaling 24 carats in platinum mesh.",
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800"
+      },
+      {
+        id: 4,
+        title: "Royal Emerald Drop Earrings",
+        category: "earring",
+        tag: "High Jewelry",
+        price: 28000,
+        desc: "Unheated Colombian Muzo emerald drops suspended from cushion diamond clusters.",
+        image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=800"
+      },
+      {
+        id: 5,
+        title: "Sovereign Blue Sapphire Ring",
+        category: "ring",
+        tag: "Royal Collection",
+        price: 34000,
+        desc: "5.50 ct Royal Blue Ceylon sapphire flanked by tapered diamond baguettes.",
+        image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=800"
+      },
+      {
+        id: 6,
+        title: "Chandelier Diamond Earrings",
+        category: "earring",
+        tag: "Couture",
+        price: 22000,
+        desc: "Art Deco architectural drop earrings engineered for effortless evening movement.",
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800"
+      }
+    ];
+
+    const productGrid = document.getElementById('productGrid');
+
+    function renderProducts(items) {
+      productGrid.innerHTML = items.map(p => `
+        <div class="product-card">
+          <div class="product-img-box">
+            <span class="product-tag">${p.tag}</span>
+            <img src="${p.image}" alt="${p.title}" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+            <div class="card-price-bar">
+              <span class="price-tag">$${p.price.toLocaleString()}</span>
+              <button class="btn-ghost-gold" style="padding: 7px 16px; font-size:10px;" onclick="addToBag(${p.id})">
+                + Acquire
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterCatalog(cat) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      if (cat === 'all') {
+        renderProducts(catalog);
+      } else {
+        renderProducts(catalog.filter(i => i.category === cat));
+      }
+    }
+
+    // --- 5. Shopping Bag & Concierge Drawer ---
+    let bag = [];
+
+    function addToBag(id) {
+      const item = catalog.find(x => x.id === id);
+      bag.push(item);
+      updateBagUI();
+      toggleBag(true);
+    }
+    function removeFromBag(idx) {
+      bag.splice(idx, 1);
+      updateBagUI();
+    }
+    function updateBagUI() {
+      const badge = document.getElementById('bagBadge');
+      const list = document.getElementById('bagList');
+      const totalDisplay = document.getElementById('bagTotal');
+      const waBtn = document.getElementById('waCheckoutBtn');
+
+      badge.textContent = bag.length;
+
+      if (bag.length === 0) {
+        list.innerHTML = `<p style="text-align:center; color:var(--text-muted); margin-top:50px;">Your selection bag is empty.</p>`;
+        totalDisplay.textContent = "$0.00";
+        waBtn.style.opacity = "0.5";
+        waBtn.href = "#";
+        return;
+      }
+
+      let total = 0;
+      let orderMsg = "Bonjour Maison Lumière! I wish to reserve the following sovereign creations:%0a";
+
+      list.innerHTML = bag.map((item, idx) => {
+        total += item.price;
+        orderMsg += `• ${item.title} ($${item.price.toLocaleString()})%0a`;
+        return `
+          <div class="bag-row">
+            <img src="${item.image}" alt="${item.title}">
+            <div style="flex-grow:1;">
+              <div style="font-size:13px; font-weight:600;">${item.title}</div>
+              <div style="color:var(--gold-champagne); font-size:12px;">$${item.price.toLocaleString()}</div>
+            </div>
+            <button onclick="removeFromBag(${idx})" style="background:none; border:none; color:#ef4444; font-size:18px;">&times;</button>
+          </div>
+        `;
+      }).join('');
+
+      totalDisplay.textContent = `$${total.toLocaleString()}`;
+      orderMsg += `%0a*Total Investment:* $${total.toLocaleString()}%0aPlease confirm courier availability.`;
+      waBtn.style.opacity = "1";
+      waBtn.href = `https://wa.me/33142680088?text=${orderMsg}`;
+    }
+
+    function toggleBag(open) {
+      document.getElementById('bagDrawer').classList.toggle('active', open);
+    }
+    document.getElementById('openBagBtn').addEventListener('click', () => toggleBag(true));
+
+    // --- 6. Private Salon Modal Handlers ---
+    function toggleModal(open) {
+      document.getElementById('salonModal').classList.toggle('active', open);
+    }
+    function submitSalon() {
+      const name = document.getElementById('sName').value;
+      const phone = document.getElementById('sPhone').value;
+      const city = document.getElementById('sCity').value;
+
+      const msg = `*VIP Salon Consultation Request*%0a` +
+                  `Client: ${name}%0a` +
+                  `Contact: ${phone}%0a` +
+                  `Salon: ${city}%0a` +
+                  `Please prepare champagne and private viewing suite.`;
+
+      window.open(`https://wa.me/33142680088?text=${msg}`, '_blank');
+      toggleModal(false);
+    }
+
+    function submitBespokeToWhatsApp() {
+      const name = document.getElementById('bName').value;
+      const phone = document.getElementById('bPhone').value;
+      const type = document.getElementById('bType').value;
+      const budget = document.getElementById('bBudget').value;
+      const notes = document.getElementById('bNotes').value;
+
+      const msg = `*Bespoke Commission Brief*%0a` +
+                  `Dignitary: ${name}%0a` +
+                  `Contact: ${phone}%0a` +
+                  `Piece Type: ${type}%0a` +
+                  `Investment Range: ${budget}%0a` +
+                  `Notes: ${notes}`;
+
+      window.open(`https://wa.me/33142680088?text=${msg}`, '_blank');
+    }
+
+    // --- 7. Testimonials Carousel ---
+    const reviews = [
+      {
+        quote: "The bespoke solitaire ring created by Maison Lumière is a masterwork of mathematical optical perfection. Walking into the Place Vendôme salon was an unforgettable experience.",
+        name: "Duchess Elena of Saxe-Coburg",
+        title: "Private Client • Geneva Salon"
+      },
+      {
+        quote: "Their unheated Colombian emerald earrings are museum grade. The service, the white-glove security delivery, and the craftsmanship are second to none in Europe.",
+        name: "Lord Sterling Sterling-Cross",
+        title: "Connoisseur & Collector • London"
+      },
+      {
+        quote: "Commissioning our 25th anniversary tiara through their WhatsApp concierge was seamless. The gouache sketch to final platinum luster took our breath away.",
+        name: "Madame Chantal de Rothschild",
+        title: "Private Patron • Paris Salon"
+      }
+    ];
+    let reviewIndex = 0;
+
+    function renderTestimonial() {
+      document.getElementById('testiQuote').textContent = `"${reviews[reviewIndex].quote}"`;
+      document.getElementById('testiName').textContent = reviews[reviewIndex].name;
+      document.getElementById('testiTitle').textContent = reviews[reviewIndex].title;
+    }
+    function nextTesti() {
+      reviewIndex = (reviewIndex + 1) % reviews.length;
+      renderTestimonial();
+    }
+    function prevTesti() {
+      reviewIndex = (reviewIndex - 1 + reviews.length) % reviews.length;
+      renderTestimonial();
+    }
+
+    // Initial page load
+    renderProducts(catalog);
+    updateDiamondPrice();
+  </script>
+</body>
+</html>
